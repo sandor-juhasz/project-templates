@@ -1,0 +1,7 @@
+{
+    "project_name": "java-17-hello-world",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+    "maven_group_id": "hu.sjuhasz.demo.hello",
+    "maven_artifact_id": "HelloWorld",
+    "maven_artifact_version": "1.0-SNAPSHOT"
+}
