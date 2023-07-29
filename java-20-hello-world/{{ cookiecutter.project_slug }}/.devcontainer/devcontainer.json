@@ -1,0 +1,23 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Java",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/devcontainers/features/java:1": {
+			"installMaven": true,
+			"version": "20",
+			"jdkDistro": "open",
+			"gradleVersion": "latest",
+			"mavenVersion": "3.9.3",
+			"antVersion": "latest"
+		}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"SonarSource.sonarlint-vscode"
+			]
+		}
+	}
+}
