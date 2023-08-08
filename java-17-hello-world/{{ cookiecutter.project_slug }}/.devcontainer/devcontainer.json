@@ -4,20 +4,7 @@
 	"name": "Java",
 	"image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
-		"ghcr.io/devcontainers/features/java:1": {
-			"installMaven": true,
-			"version": "17",
-			"jdkDistro": "ms",
-			"gradleVersion": "latest",
-			"mavenVersion": "3.9.3",
-			"antVersion": "latest"
-		}
-	},
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"SonarSource.sonarlint-vscode"
-			]
+		"ghcr.io/sandor-juhasz/devcontainer-features/java:latest": {
 		}
 	}
 }
