@@ -1,0 +1,4 @@
+{
+    "project_name": "rust-hello-world",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}"
+}
