@@ -2,9 +2,5 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
 	"name": "Go",
-	"image": "mcr.microsoft.com/devcontainers/base:jammy",
-	"features": {
-		"ghcr.io/sandor-juhasz/devcontainer-features/go:latest": {
-		}
-	}
+	"image": "ghcr.io/sandor-juhasz/devcontainer-images/go:latest"
 }
