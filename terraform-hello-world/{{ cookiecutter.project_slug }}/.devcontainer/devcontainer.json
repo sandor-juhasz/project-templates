@@ -1,0 +1,4 @@
+{
+	"name": "Terraform",
+	"image": "ghcr.io/sandor-juhasz/devcontainer-images/terraform:latest"
+}
