@@ -1,0 +1,15 @@
+{
+    "name": "Ubuntu",
+    "dockerComposeFile": "../compose.yaml",
+    "service": "devcontainer",
+    "workspaceFolder": "/workspaces/{{ cookiecutter.project_name }}",
+    "features": {
+        "ghcr.io/sandor-juhasz/devcontainer-features/postgresql:latest": {
+            "installPsql": true
+        },
+        "ghcr.io/sandor-juhasz/devcontainer-features/python:latest": {
+            "defaultPythonVersion": "system"
+        }
+    },
+    "postCreateCommand": ".devcontainer/postCreate"
+}

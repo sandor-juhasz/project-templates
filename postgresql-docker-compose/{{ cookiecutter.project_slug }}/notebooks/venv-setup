@@ -1,0 +1,12 @@
+#!/bin/bash -e
+#
+# This script sets up the Python virtual environment for the project
+#
+
+if ! which pyenv >/dev/null; then
+    echo "Error: pyenv is not installed."
+    exit 1
+fi
+
+pyenv virtualenv system "$(cat .python-version)"
+pip install -r requirements.txt

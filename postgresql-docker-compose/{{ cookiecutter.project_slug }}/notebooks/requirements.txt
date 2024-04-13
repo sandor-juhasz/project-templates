@@ -1,0 +1,4 @@
+ipykernel
+ipython-sql
+psycopg2-binary
+watermark

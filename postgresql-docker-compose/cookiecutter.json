@@ -1,0 +1,4 @@
+{
+    "project_name": "postgresql-docker-compose",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}"
+}

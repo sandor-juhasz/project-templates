@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# Executes project-specific initializers once the devContainer is started.
+#   - Creates virtual environments
+#   - Downloads dependencies
+#   - etc.
+#
+# Note: This script is executed from the project root directory.
+#
+cd notebooks
+./venv-setup
