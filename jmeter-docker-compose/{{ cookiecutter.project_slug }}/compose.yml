@@ -1,0 +1,51 @@
+services:
+
+  jmeter-server1:
+    build:
+      context: .
+      dockerfile: jmeter.Dockerfile
+    volumes:
+      - ./rmi_keystore.jks:/opt/apache-jmeter-config/rmi_keystore.jks   # Secret for client-servet connections
+      - ./test:/test                                                    # Test case directory containing jmx files and data
+    environment:
+      - JMETER_MODE=server
+
+  jmeter-server2:
+    build:
+      context: .
+      dockerfile: jmeter.Dockerfile
+    volumes:
+      - ./rmi_keystore.jks:/opt/apache-jmeter-config/rmi_keystore.jks   # Secret for client-servet connections
+      - ./test:/test                                                    # Test case directory containing jmx files and data
+    environment:
+      - JMETER_MODE=server
+
+  jmeter-client-headless:
+    build:
+      context: .
+      dockerfile: jmeter.Dockerfile
+    volumes:
+      - ./rmi_keystore.jks:/opt/apache-jmeter-config/rmi_keystore.jks   # Secret for client-servet connections
+      - ./test:/test                                                    # Test case directory containing jmx files and data
+    environment:
+      - JMETER_MODE=client                                              # Parameters to customize the container
+      - JMETER_REMOTE_HOSTS=jmeter-server1,jmeter-server2
+      - JMETER_TEST_SCRIPT=/test/test.jmx
+      - JMETER_TEST_RESULT_DIR=/test/result
+
+  # jmeter-client-interactive:
+  #   build:
+  #     context: .
+  #     dockerfile: jmeter.Dockerfile
+  #   volumes:
+  #     - /tmp/.X11-unix:/tmp/.X11-unix                                   # Sharing files and sockets for X forwarding
+  #     - /mnt/wslg:/mnt/wslg 
+  #     - ./rmi_keystore.jks:/opt/apache-jmeter-config/rmi_keystore.jks   # Secret for client-servet connections
+  #     - ./test:/test                                                    # Test case directory containing jmx files and data
+  #   environment:
+  #     - DISPLAY                                                         # Environment variables from WSL for X forwarding
+  #     - WAYLAND_DISPLAY
+  #     - XDG_RUNTIME_DIR
+  #     - PULSE_SERVER
+  #     - JMETER_MODE=interactive                                         # Parameters to customize the container
+  #     - JMETER_REMOTE_HOSTS=jmeter-server1,jmeter-server2
