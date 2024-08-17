@@ -1,0 +1,24 @@
+#!/bin/bash
+
+echo "Testing Snowflake configuration directories..."
+if [[ ! -d ~/.snowflake ]]; then
+    echo "Creating ~/.snowflake..."
+    mkdir -p ~/.snowflake
+fi
+
+if [[ ! -e ~/.snowflake/connections.toml ]]; then
+    echo "Creating connections.toml..."
+    touch ~/.snowflake/connections.toml
+fi
+
+if [[ ! -d ~/.snowsql ]]; then 
+    echo "Creating ~/.snowsql..."
+    mkdir -p ~/.snowsql
+fi
+
+if [[ ! -e ~/.snowsql/config ]]; then 
+    echo "Creating default~/.snowsql/config..."
+    cp .devcontainer/snowsql-config.default ~/.snowsql/config
+fi
+
+echo "Ready."

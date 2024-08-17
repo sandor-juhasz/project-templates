@@ -1,0 +1,17 @@
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/sandor-juhasz/devcontainer-features/snowflake:latest": {
+	           "installSnowflakeCLI": true,
+			   "installSnowSQL": true,
+			   "snowSQLVersion": "1.3.1"	
+		}
+	},
+	"forwardPorts": [53154, 53154],
+	"initializeCommand": "./.devcontainer/envinit",
+    "mounts": [
+		"source=${localEnv:HOME}/.snowflake,target=/home/vscode/.snowflake,type=bind,consistency=cached",
+		"source=${localEnv:HOME}/.snowsql/config,target=/home/vscode/.snowsql/config,type=bind,consistency=cached"
+	]	
+}
