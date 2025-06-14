@@ -1,0 +1,5 @@
+{
+	"name": "{{ cookiecutter.project_name }}",
+	"image": "ghcr.io/sandor-juhasz/devcontainer-images/python-3.12:latest",
+	"postCreateCommand": ".devcontainer/postCreateCommands"
+}

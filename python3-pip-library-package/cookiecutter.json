@@ -1,0 +1,10 @@
+{
+    "owner_namespace": "sjuhasz",
+    "project_package": "demopackage",
+    "project_module": "demomodule",
+    "project_name": "{{ cookiecutter.owner_namespace + '.' + cookiecutter.project_package }}",
+    "project_version": "0.0.1",
+    "project_description": "Python pip library package",
+    "project_slug": "{{ cookiecutter.project_name }}",
+    "python_venv": "{{ cookiecutter.project_name }}"
+}

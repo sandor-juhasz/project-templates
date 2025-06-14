@@ -1,0 +1,19 @@
+#!/bin/bash -e
+
+echo "Executing PostCreate commands..."
+
+echo "Creating virtual environment..."
+pyenv virtualenv "$(pyenv latest '3.12')" "$(cat .python-version)"
+
+#
+# Note: virtualenv must be activated manually. The .python-version is not picked up
+#       by the script, the `pyenv activate` cannot be used from here either.
+#
+echo "Activating the virtual environment..."
+. ${PYENV_ROOT}/versions/$(cat .python-version)/bin/activate
+
+echo "Upgrading pip..."
+pip install -U pip
+
+echo "Installing the Python package in editable mode with development extensions..."
+pip install -e '.[test]'
