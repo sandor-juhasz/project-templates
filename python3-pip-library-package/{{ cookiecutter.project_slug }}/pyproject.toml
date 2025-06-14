@@ -1,7 +1,18 @@
 [project]
 name="{{ cookiecutter.project_name }}"
 version="{{ cookiecutter.project_version }}"
+authors = [
+    { name="{{ cookiecutter.author_name }}", email="{{ cookiecutter.author_email }}" }
+]
 description="{{ cookiecutter.project_description }}"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Operating System :: OS Independent",
+]
 
 [build-system]
 requires = ["hatchling"]
