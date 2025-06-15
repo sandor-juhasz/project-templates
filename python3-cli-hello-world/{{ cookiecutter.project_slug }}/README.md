@@ -1,9 +1,8 @@
-# Python3 Hello World Project
+# Python3 Hello World CLI Project
 
-This is a skeleton project for Python3 development.
+This is a skeleton project for Python3 CLI applications.
 
 To try it out, run:
 ```sh
-./create_venv
-./.venv/bin/sjuhasz-helloworld
+$ {{ cookiecutter.cli_command }}
 ```

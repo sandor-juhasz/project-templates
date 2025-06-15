@@ -1,9 +1,6 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"name": "{{ cookiecutter.project_name }}",
 	"image": "ghcr.io/sandor-juhasz/devcontainer-images/python-3.12:latest",
-
-	"postCreateCommand": "pip3 install --user ipykernel ipython && pip3 install -e ."
+	"postCreateCommand": ".devcontainer/postCreateCommands"
 }
+
