@@ -1,0 +1,9 @@
+{
+	"name": "{{ cookiecutter.project_name }}",
+	"image": "mcr.microsoft.com/devcontainers/base:jammy",
+	"features": {
+		"ghcr.io/sandor-juhasz/devcontainer-features/java:latest": {
+			"javaVersion": "21.0.8-tem"
+		}
+	}
+}
